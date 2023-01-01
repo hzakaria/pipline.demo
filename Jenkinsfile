@@ -1,3 +1,7 @@
+pipeline{
+tools {
+maven  'maven_3.8.6'
+}
 node {
     def WORKSPACE = "/var/lib/jenkins/workspace/pipline.demo"
     def dockerImageTag = "pipline.demo${env.BUILD_NUMBER}"
@@ -25,7 +29,7 @@ try{
     notifyBuild(currentBuild.result)
  }
 }
-
+}
 
 def notifyBuild(String buildStatus = 'STARTED'){
 
