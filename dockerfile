@@ -1,4 +1,4 @@
-FROM maven:3.8.7 AS build
+FROM 3.8.6-openjdk-18 AS build
 # Copy folder in docker
 WORKDIR /opt/app
 COPY ./ /opt/app
