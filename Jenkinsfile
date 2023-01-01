@@ -1,10 +1,12 @@
 pipeline  {
-    def WORKSPACE = "/var/lib/jenkins/workspace/pipline.demo"
-    def dockerImageTag = "pipline.demo${env.BUILD_NUMBER}"
+
       tools {
                 maven 'Maven 3.8.7'
             }
 try{
+
+def WORKSPACE = "/var/lib/jenkins/workspace/pipline.demo"
+    def dockerImageTag = "pipline.demo${env.BUILD_NUMBER}"
     notifyBuild('STARTED')
 
     stage('Clone Repo') {
