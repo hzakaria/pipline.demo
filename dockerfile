@@ -1,4 +1,4 @@
-FROM openjdk:11 As build
+FROM maven:3.6.0-jdk-11-slim AS build
 # Copy folder in docker
 WORKDIR /opt/app
 COPY ./ /opt/app
