@@ -17,7 +17,7 @@ pipeline {
      }
     stage('Build docker') {
        steps {
-         docker.build("pipline.demo:${env.BUILD_NUMBER}")
+       echo "Docker build -t pipline.demo${env.BUILD_NUMBER}"
          }
     }
     stage('Deploy docker'){
