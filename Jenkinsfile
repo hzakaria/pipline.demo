@@ -1,11 +1,11 @@
-pipeline{
-tools {
-maven  'maven_3.8.6'
-}
+
 node {
     def WORKSPACE = "/var/lib/jenkins/workspace/pipline.demo"
     def dockerImageTag = "pipline.demo${env.BUILD_NUMBER}"
 try{
+tools {
+maven  'maven_3.8.6'
+}
     notifyBuild('STARTED')
     stage('Clone Repo') {
         // for display purposes
@@ -29,7 +29,7 @@ try{
     notifyBuild(currentBuild.result)
  }
 }
-}
+
 
 def notifyBuild(String buildStatus = 'STARTED'){
 
