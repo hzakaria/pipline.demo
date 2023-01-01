@@ -1,6 +1,6 @@
 node {
     def WORKSPACE = "/var/lib/jenkins/workspace/pipline.demo"
-    def dockerImageTag = "pipline.demo"
+    def dockerImageTag = "pipline.demo${env.BUILD_NUMBER}"
 try{
     notifyBuild('STARTED')
     stage('Clone Repo') {
@@ -11,7 +11,7 @@ try{
           //  branch: 'main'
      }
     stage('Build docker') {
-         dockerImage = docker.build("pipline.demo")
+         dockerImage = docker.build("pipline.demo:${env.BUILD_NUMBER}")
     }
     stage('Deploy docker'){
           echo "Docker Image Tag Name: ${dockerImageTag}"
