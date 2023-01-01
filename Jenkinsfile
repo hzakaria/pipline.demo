@@ -25,9 +25,8 @@ pipeline {
     stage('Deploy docker'){
        steps {
        script{
-          echo "Docker Image Tag Name: ${pipline.demo${env.BUILD_NUMBER}}"
           sh "docker stop pipline.demo || true && docker rm pipline.demo || true"
-          sh "docker run --name pipline.demo -d -p 8081:8080 pipline.demo:${env.BUILD_NUMBER}"
+          sh "docker run --name pipline.demo -d -p 8082:8080 pipline.demo:${env.BUILD_NUMBER}"
           }
           }
     }  }
