@@ -1,4 +1,4 @@
-FROM maven:3.6.0-jdk-11-slim AS build
+FROM maven:3.8.7-jdk-11-slim AS build
 # Copy folder in docker
 WORKDIR /opt/app
 COPY ./ /opt/app
