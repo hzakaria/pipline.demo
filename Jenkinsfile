@@ -1,8 +1,11 @@
-node {
+pipeline  {
     def WORKSPACE = "/var/lib/jenkins/workspace/pipline.demo"
     def dockerImageTag = "pipline.demo${env.BUILD_NUMBER}"
 try{
     notifyBuild('STARTED')
+    tools {
+            maven 'Maven 3.8.7'
+        }
     stage('Clone Repo') {
         // for display purposes
         // Get some code from a GitHub repository
