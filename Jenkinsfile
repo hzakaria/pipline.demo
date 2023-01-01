@@ -3,6 +3,7 @@ pipeline {
     tools {
         maven 'maven_3.8.7'
     }
+    stages {
 
     stage('Clone Repo') {
         // for display purposes
@@ -18,7 +19,7 @@ pipeline {
           echo "Docker Image Tag Name: ${pipline.demo${env.BUILD_NUMBER}}"
           sh "docker stop pipline.demo || true && docker rm pipline.demo² || true"
           sh "docker run --name pipline.demo -d -p 8081:8080 pipline.demo:${env.BUILD_NUMBER}"
-    }
+    }  }
 
 }
 
