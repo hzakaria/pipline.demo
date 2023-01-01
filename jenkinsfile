@@ -1,5 +1,5 @@
 node {
-    def WORKSPACE = "/var/lib/jenkins/workspace/pipline.demo"
+    def WORKSPACE = "/var/lib/jenkins/workspace/demo-pipline"
     def dockerImageTag = "pipline.demo${env.BUILD_NUMBER}"
 try{
     notifyBuild('STARTED')
